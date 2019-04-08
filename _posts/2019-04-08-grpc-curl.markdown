@@ -1,0 +1,24 @@
+---
+layout: post
+title:  "TIL: 命令行调用 gRPC 方法"
+date:   2019-04-08 09:01:53 +0800
+categories: TIL gRPC
+---
+
+在日常开发调试中，我们经常使用 `cURL` 来调用 HTTP 接口。使用 `cURL` 有几个好处:
+  * 所有参数都能用文本显式表达，在与他人沟通的时候，能没有歧义地描述某个请求
+  * 通过命令行调用，能够方便写成脚本调用
+
+而在开发 gRPC 服务的时候，需要使用 protocol buffer 编码请求与响应到二进制格式，单纯的 `cURL` 就不再适用了，经常需要自己编写 gRPC Client 来调试，比较麻烦。
+
+[grpcurl](https://github.com/fullstorydev/grpcurl) 很好地解决了这个痛点，让我们能够从命令行调用 gPRC 方法：
+
+```bash
+grpcurl \
+  -d '{"request": "payload in json"}' \
+  -import-path <path-to-proto-dir> \
+  -proto <proto-file>  \
+  -plaintext \
+  <server:port> \
+  <custom.service.MethodX>
+```
