@@ -27,14 +27,6 @@ categories: gRPC network
 
 ---
 ### 事后分析
-* **还可以通过 gRPC 记录客户端 IP**
-
-```go
-import("google.golang.org/grpc/peer")
-p, _ := peer.FromContext(ctx)
-fmt.Println(p.Addr)
-```
-
 * **Kubernetes gRPC Load Balance**
 
 gRPC 使用基于 HTTP2 的长链接，之前 connection-based load balance 需要转换成 request-based load balance
@@ -44,3 +36,13 @@ gRPC 使用基于 HTTP2 的长链接，之前 connection-based load balance 需�
 
 应该限制每个客户端能建立的最大连接数
 [gRPC Support with Nginx](https://www.nginx.com/blog/nginx-1-13-10-grpc/)
+
+* ~~**还可以通过 gRPC 记录客户端 IP(误)**~~
+
+因为是四层代理，大概率会得到和 `netstat` 一样的结果，需要进一步测试
+
+```go
+import("google.golang.org/grpc/peer")
+p, _ := peer.FromContext(ctx)
+fmt.Println(p.Addr)
+```
