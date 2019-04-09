@@ -27,7 +27,7 @@ categories: gRPC network
 
 ---
 ### 事后分析
-* 还可以通过 gRPC 记录客户端 IP
+* **还可以通过 gRPC 记录客户端 IP**
 
 ```go
 import("google.golang.org/grpc/peer")
@@ -35,10 +35,12 @@ p, _ := peer.FromContext(ctx)
 fmt.Println(p.Addr)
 ```
 
-* Kubernetes gRPC Load Balance
+* **Kubernetes gRPC Load Balance**
+
 gRPC 使用基于 HTTP2 的长链接，之前 connection-based load balance 需要转换成 request-based load balance
 [Kubernetes gRPC Load Balance with Linkerd](https://kubernetes.io/blog/2018/11/07/grpc-load-balancing-on-kubernetes-without-tears/)
 
-* 客户端限流 (Rate Limit)
+* **客户端限流 (Rate Limit)**
+
 应该限制每个客户端能建立的最大连接数
 [gRPC Support with Nginx](https://www.nginx.com/blog/nginx-1-13-10-grpc/)
