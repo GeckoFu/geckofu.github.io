@@ -28,7 +28,7 @@ gRPC 可以在 Layer 4 或者 Layer 7 做负载均衡。 但是如果在 Layer 4
 name resolver + balance policy:
 
 * [grpc/blob/master/doc/load-balancing](https://github.com/grpc/grpc/blob/master/doc/load-balancing.md)
-
+* [grpc blog](https://grpc.io/blog/loadbalancing)
 * [另外一篇介绍 gRPC Load Balancing 的文章](https://itnext.io/on-grpc-load-balancing-683257c5b7b3)
 
 需要部署一个额外的 Load Balancer, 例如 [grpclb](https://github.com/bsm/grpclb)
@@ -40,3 +40,7 @@ Sub-channel 的概念应该与 RabbitMQ Channel 的概念比较类似，通过�
 ## 基于请求的负载均衡: Linkerd
 
 参考 [Linkerd 使用方法](https://kubernetes.io/blog/2018/11/07/grpc-load-balancing-on-kubernetes-without-tears/#grpc-load-balancing-on-kubernetes-with-linkerd)
+
+
+#### Link Dump
+* [Gist](https://gist.github.com/bojand/6a604f7e369d7c7d8c39eb77878a42c2)
