@@ -17,11 +17,11 @@ Wireshark 是一款很强大的网络分析软件。一个最常见的使用场�
 
 2. 右击其中的一个 packet，选择 Conversation Filter -> TCP。这个菜单帮你做的，就是在筛选框内填上 src/dest 的 ip + port，查询这个 TCP 会话的所有 packet。
 
-![wireshark-conversation-filter](/_assets/wireshark-conversation-filter.png)
+![wireshark-conversation-filter](/assets/wireshark-conversation-filter.png)
 
 筛选后的结果:
 
-![wireshark-filtered](/_assets/wireshark-filtered.png)
+![wireshark-filtered](/assets/wireshark-filtered.png)
 
 注意看 time 这一列，从第 14 秒到第 24 秒之间没有数据包，然后我们的客户端 (100.xxx.xxx.xxx) 主动断开了链接，不是 Binance 服务器拒绝。
 
