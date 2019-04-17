@@ -44,7 +44,7 @@ func main() {
 #### SideNote: 不同信号之间的区别
 * `SIGINT` Interruption: 在终端输入 Ctrl-C 时，系统发送的信号，可以被捕获
 * `SIGTERM` Terminate: `kill` 命令默认发送的信号，与 `SIGINT` 相似，主要不同的就是一个在终端输入，另一个通过 `kill` 调用
-* `SIGKILL`: 不能被捕获，没有办法做 Graceful Termination
+* `SIGKILL`: `kill -9` 不能被捕获，没有办法做 Graceful Termination
 * `SIGSTOP`: 在终端输入 Ctrl-Z，暂停进程执行
 
 **参考🔗**
