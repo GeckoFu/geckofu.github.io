@@ -41,6 +41,30 @@ func main() {
 ---
 <br/>
 
+#### sidenote: Graceful Restart in Go
+应用的 Graceful Restart 比 Terminate 更加复杂一些。
+在 Ruby Web 应用中，你基本上不需要考虑这些，因为 Puma 等 webserver 已经帮你处理了；但 Go 中这些情况需要自己处理。
+
+> 主要要解决两个问题：
+>
+>  * 进程重启不需要关闭监听的端口
+>
+>  * 既有请求应当完全处理或者超时
+>
+>  https://colobu.com/2015/10/09/Linux-Signals/
+
+具体方法：
+1. Fork 一个子进程，与父进程侦听同一个端口
+2. 通知父进程，做 graceful terminate
+
+[endless](https://github.com/fvbock/endless) 是这个思路的具体实现
+
+**参考🔗**
+* [Graceful Restart in Golang](https://grisha.org/blog/2014/06/03/graceful-restart-in-golang/)
+
+---
+<br/>
+
 #### sidenote: PodDisruptionBudget 与 RollingUpdate 的区别
 * 两者都不能防止 delete 操作同时删除所有 replica
 * Deployment Controller 关心 RollingUpdate, Eviction API 关心 PodDisruptionBudget
