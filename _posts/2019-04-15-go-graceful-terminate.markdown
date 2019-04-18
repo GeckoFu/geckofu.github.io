@@ -41,7 +41,17 @@ func main() {
 ---
 <br/>
 
-#### SideNote: 不同信号之间的区别
+#### sidenote: PodDisruptionBudget 与 RollingUpdate 的区别
+* 两者都不能防止 delete 操作同时删除所有 replica
+* Deployment Controller 关心 RollingUpdate, Eviction API 关心 PodDisruptionBudget
+
+**参考🔗**
+* [revolgy blog](https://www.revolgy.com/blog/kubernetes-in-production-poddisruptionbudget)
+
+---
+<br/>
+
+#### sidenote: 不同信号之间的区别
 * `SIGINT` Interruption: 在终端输入 Ctrl-C 时，系统发送的信号，可以被捕获
 * `SIGTERM` Terminate: `kill` 命令默认发送的信号，与 `SIGINT` 相似，主要不同的就是一个在终端输入，另一个通过 `kill` 调用
 * `SIGKILL`: `kill -9` 不能被捕获，没有办法做 Graceful Termination
