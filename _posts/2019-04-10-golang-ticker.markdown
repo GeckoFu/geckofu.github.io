@@ -6,7 +6,7 @@ categories: Go
 ---
 
 
-今天看到 "肥朝" 公众号一篇介绍 SpringBoot 中定时器的[文章](https://mp.weixin.qq.com/s/1IyXrkhCvG1hR21Vr1ttkA)，感觉挺有意思。
+今天看到 "肥朝" 公众号一篇介绍 SpringBoot 中定时器的[__文章__](https://mp.weixin.qq.com/s/1IyXrkhCvG1hR21Vr1ttkA)，感觉挺有意思。
 
 文章列举了 SpringBoot 定时器的三种模式: `fixedDelay`, `cron`, `fixedRate`, 那么 Go 语言中 `time.Ticker` 是哪一种呢？
 
@@ -38,6 +38,8 @@ func main() {
 ```
 
 可以看到 Go 中的定时器相当于 SpringBoot 中的 `fixedRate` 模式。
+
+而要达到 `fixedDelay` 效果，直接阻塞调用 `time.Sleep` 就可以了。
 
 还有一个值得注意的点，ticker 创建完之后，不是马上就有一个 tick，第一个 tick 在 3 秒之后。Github 上有相关的[讨论](https://github.com/golang/go/issues/17601)。
 
