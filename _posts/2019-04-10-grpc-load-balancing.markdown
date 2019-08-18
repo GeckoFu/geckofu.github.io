@@ -44,3 +44,5 @@ Sub-channel 的概念应该与 RabbitMQ Channel 的概念比较类似，通过�
 
 #### Link Dump
 * [Gist](https://gist.github.com/bojand/6a604f7e369d7c7d8c39eb77878a42c2)
+
+{% include /disqus.html %}

@@ -48,3 +48,5 @@ import("google.golang.org/grpc/peer")
 p, _ := peer.FromContext(ctx)
 fmt.Println(p.Addr)
 ```
+
+{% include /disqus.html %}

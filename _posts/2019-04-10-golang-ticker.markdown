@@ -70,3 +70,4 @@ func NewTicker(d Duration) *Ticker {
 
 因为 Channel 只能包含一个元素，runtime 往其中发送时间戳的时候，如果上一个没有消费完，发送方就会 block。
 
+{% include /disqus.html %}
